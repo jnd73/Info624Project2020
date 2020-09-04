@@ -1,0 +1,20 @@
+Type	-Standard boolean
+Episodes -rank feature	
+Status	-standard
+Start airing	-datetime
+End airing	-datetime
+Starting season	-standard boolean
+Broadcast time	-standard
+Producers	-standard boolean
+Licensors	-standard boolean
+Studios	-standard boolean
+Sources	-standard boolean
+Genres	-standard boolean
+Duration	-standard
+Rating	-rank feature
+Score	-rank feature
+Scored by	-rank feature
+Members	-rank feature
+Favorites	-rank fature
+Description	-english DFR
+anime_img	-type: url

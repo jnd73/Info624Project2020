@@ -1,0 +1,1 @@
+web: gunicorn ElasticSearchFlask:app

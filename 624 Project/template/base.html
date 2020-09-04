@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style.css')}}">
+    <title>{% block title %} {% endblock %}</title>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+
+</head>
+<body style="background-image: url({{ url_for('static', filename='images/backgroundimage.jpg') }});">
+    <h1>Group 16 Anime Search Engine</h1>
+    <center>
+    <form action ="#" method = "post">
+        <!-- <p>Quick Search</p> -->
+        <input id = "searchbar" type="text" placeholder="Search anime" name= "keyword">
+        <button type="submit" name="quickSearch" value="submit" class="btn btn-danger">Go</button>
+    </form>
+    </center>
+    <h2>Advanced Search</h2>
+    <form action="#" method="post">
+        <ul class="filter-grid">
+            <li>
+        <p>What type?</p>
+       
+            <select name="AnimeType">
+                <option value="TV">TV</option>
+                <option value="OVA">OVA</option>
+                <option value="Movie">Movie</option>
+                <option value="ONA">Ona</option>
+                <option value="Special">Special</option>
+                <option value="Music">Music</option>
+              </select></li>
+        
+        <li>
+        <P>Minimum Rating</P>
+        <input type="range" min="0" max="10" value="5" name="AnimeRating" id = "myRange">
+        <label id="demo">x</label></li>
+        <script>
+            var slider = document.getElementById("myRange");
+            var output = document.getElementById("demo");
+            output.innerHTML = slider.value; // Display the default slider value
+
+            // Update the current slider value (each time you drag the slider handle)
+            slider.oninput = function() {
+            output.innerHTML = this.value;
+            }
+        </script>
+
+
+
+
+
+
+
+        <li>
+        <p>Airing Year</p>
+        Start: <input type="date" name = "AnimeStartDate"><br><br>
+        </li></ul><br><br><br><br><br>
+        <p class="section">Genres:</p>
+        <div class="container">
+        <ul class="checkbox-grid">
+        <li><input type="checkbox" name = "AnimeGenre" value="Josei"><label class="label label-danger">Josei</label></li>
+        <li><input type="checkbox" name = "AnimeGenre" value="Vampire"><label class="label label-danger">Vampire</label></li>
+        <li><input type="checkbox" name = "AnimeGenre" value="Supernatural"><label class="label label-danger">Supernatural</label></li> 
+        <li><input type="checkbox" name = "AnimeGenre" value="Shoujo"><label class="label label-danger">Shoujo</label></li>
+        <li><input type="checkbox" name = "AnimeGenre" value="Action"><label class="label label-danger">Action</label></li> 
+        <li><input type="checkbox" name = "AnimeGenre" value="Comedy"><label class="label label-danger">Comedy</label></li>
+        
+        <li><input type="checkbox" name = "AnimeGenre" value="Sports"><label class="label label-danger">Sports</label></li> 
+        <li><input type="checkbox" name = "AnimeGenre" value="Seinen"><label class="label label-danger">Seinen</label></li>
+        <li><input type="checkbox" name = "AnimeGenre" value="Military"><label class="label label-danger">Military</label></li> 
+        <li><input type="checkbox" name = "AnimeGenre" value="Fantasy"><label class="label label-danger">Fantasy</label></li>
+        <li><input type="checkbox" name = "AnimeGenre" value="Magic"><label class="label label-danger">Magic</label></li> 
+        <li><input type="checkbox" name = "AnimeGenre" value="Dementia"><label class="label label-danger">Dementia</label></li>
+
+        <li><input type="checkbox" name = "AnimeGenre" value="Harem"><label class="label label-danger">Harem</label></li> 
+        <li><input type="checkbox" name = "AnimeGenre" value="Mecha"><label class="label label-danger">Mecha</label></li>
+        <li><input type="checkbox" name = "AnimeGenre" value="Historical"><label class="label label-danger">Historical</label></li> 
+        <li><input type="checkbox" name = "AnimeGenre" value="Sci-Fi"><label class="label label-danger">Sci-Fi</label></li>
+        <li><input type="checkbox" name = "AnimeGenre" value="Shounen Ai"><label class="label label-danger">Shounen Ai</label></li> 
+        <li><input type="checkbox" name = "AnimeGenre" value="Mystery"><label class="label label-danger">Mystery</label></li>
+
+        <li><input type="checkbox" name = "AnimeGenre" value="Adventure"><label class="label label-danger">Adventure</label></li> 
+        <li><input type="checkbox" name = "AnimeGenre" value="Thriller"><label class="label label-danger">Thriller</label></li>
+        <li><input type="checkbox" name = "AnimeGenre" value="Shounen"><label class="label label-danger">Shounen</label></li> 
+        <li><input type="checkbox" name = "AnimeGenre" value="Slice of Life"><label class="label label-danger">Slice of Life</label></li>
+        <li><input type="checkbox" name = "AnimeGenre" value="Martial Arts"><label class="label label-danger">Martial Arts</label></li> 
+        <li><input type="checkbox" name = "AnimeGenre" value="Space"><label class="label label-danger">Space</label></li>
+
+        <li><input type="checkbox" name = "AnimeGenre" value="Horror"><label class="label label-danger">Horror</label></li> 
+        <li><input type="checkbox" name = "AnimeGenre" value="Drama"><label class="label label-danger">Drama</label></li>
+        <li><input type="checkbox" name = "AnimeGenre" value="Demons"><label class="label label-danger">Demons</label></li> 
+        <li><input type="checkbox" name = "AnimeGenre" value="Game"><label class="label label-danger">Game</label></li>
+        <li><input type="checkbox" name = "AnimeGenre" value="Parody"><label class="label label-danger">Parody</label></li> 
+        <li><input type="checkbox" name = "AnimeGenre" value="Police"><label class="label label-danger">Police</label></li>
+
+        <li><input type="checkbox" name = "AnimeGenre" value="Psychological"><label class="label label-danger">Psychological</label></li> 
+        <li><input type="checkbox" name = "AnimeGenre" value="Super Power"><label class="label label-danger">Super Power</label></li>
+        <li><input type="checkbox" name = "AnimeGenre" value="School"><label class="label label-danger">School</label></li> 
+        <li><input type="checkbox" name = "AnimeGenre" value="Romance"><label class="label label-danger">Romance</label></li>
+        <li><input type="checkbox" name = "AnimeGenre" value="Music"><label class="label label-danger">Music</label></li> 
+        <li><input type="checkbox" name = "AnimeGenre" value="Samurai"><label class="label label-danger">Samurai</label></li>
+        
+        </ul>
+        </div>
+        <br><br>
+        <p>Order by:</p>
+
+        <select name="AnimeSort">
+            <option value="Score">Score(Rating)</option>
+            <option value="Relevance">Relevance</option>
+        </select><br><br>
+
+        <button type ="reset" name = "reset" href = "{{ url_for('index') }}" class="btn btn-default">Reset</button>
+        <button type="submit" name = "genreSearch" value="submit" class="btn btn-danger">Go</button>
+    </form>
+    <br><br><br>
+    {% block result %} {% endblock %}
+</body>
+</html>

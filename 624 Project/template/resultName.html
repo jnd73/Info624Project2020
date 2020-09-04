@@ -1,0 +1,19 @@
+{%extends "base.html" %}
+{% block title %}Results {% endblock %}
+
+{% block result %}
+<h2>Results:</h2><br><br>
+<ul style="list-style-type:none;">
+    {% for x in kw %}
+    <div class="result-block">
+        {%if x['_source']['anime_img'] != 'No Image': %}
+            <li><img class = "image_for" src= {{x['_source']['anime_img']}} alt={{x['_source']['Title']}}></li><br>  
+            {% endif %}  
+        {% if x['_source']['anime_img'] == 'No Image': %}   
+            <li><img class = "image_for" src={{ url_for('static', filename = 'images/no-image-temp.png')}}  alt={{x['_source']['Title']}}></li><br>
+            {% endif %}
+           <h2>{{x['_source']['Title']}}</h2>
+            <li>{{x['_source']['Description']}}</li></div><br><br>        
+    {% endfor %}
+</ul>
+{% endblock %}

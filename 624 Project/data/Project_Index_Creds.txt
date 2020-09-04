@@ -1,0 +1,45 @@
+erp75_info624_201904_project_anime
+
+Username: erp75
+Password: seeng7oht9Ke
+
+Changelog:
+1. Deleted Scored by, Members, and Favorites so scoring will not be biased. However, episodes is still set to rank_feature and some low scoring anime have high number of episodes. Boosting the score will give better results. Please see sample code on how to boost rank_feature.
+2. Updated episodes for some anime since rank_feature won't allow for NA.
+3. Updated index.
+4. Included 1563 instances of data.
+
+Sample code for rank_feature boosting:
+GET /test/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match": {
+            "content": "2016"
+          }
+        }
+      ],
+      "should": [
+        {
+          "rank_feature": {
+            "field": "pagerank"
+          }
+        },
+        {
+          "rank_feature": {
+            "field": "url_length",
+            "boost": 0.1
+          }
+        },
+        {
+          "rank_feature": {
+            "field": "topics.sports",
+            "boost": 0.4
+          }
+        }
+      ]
+    }
+  }
+}

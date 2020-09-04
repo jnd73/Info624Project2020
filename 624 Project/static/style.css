@@ -1,0 +1,115 @@
+body {
+    background-repeat: no-repeat;
+    background-size: 1550px 760px;
+    background-color: rgb(27, 26, 26);
+    background-attachment: fixed;
+    margin-left: 50px;
+  }
+
+  h1 {
+    color:white;
+    text-align: center;
+  }
+  
+  p {
+    font-family: verdana;
+    font-size: 20px;
+    color: white;
+  }
+
+  #searchbar {
+    border: 3px solid gray;  
+    height: 30px;
+    width: 500px;
+    margin-right: 20px;
+    border-radius: 10px;
+  }
+  input[type="checkbox"]:checked{
+    box-shadow: 0 0 0 3px rgb(212, 80, 39);
+    
+    
+  }
+
+  input[type="checkbox"]{
+    margin-right: 10px;
+  }
+  input[type="range"]{
+    height: 20px;
+    width: 300px;
+    background-color: red;
+  }
+.image_for{
+    width: 150px;
+    height: 150px;
+  }
+
+
+
+  input[type="date"]{
+    height: 30px;
+    border-radius: 10px;
+    color: black;
+    border: 3px solid gray;  
+  }
+  label{
+    color: white;
+    margin-right: 80px;
+  }
+  button{
+    height: 30px;
+    width: 100px;
+    border-radius: 10px;
+    
+  }
+ul{
+  list-style-type: none;
+}
+li{
+  list-style: none;
+  color: white;
+}
+h2{
+  color: white;
+}
+.container{
+  width: 1000px;
+  margin-left: 20px;
+  padding: 20px 5px 5px 30px;
+  border: 2px solid gray;
+  
+
+}
+.section{
+  margin-left: 0px;
+}
+
+select{
+  height: 30px;
+  width: 200px;
+  border-radius: 5px;
+  border: 3px solid gray;  
+  color: black;
+}
+
+.checkbox-grid li {
+  display: block;
+  float: left;
+  width: 25%;
+}
+
+.filter-grid li{
+  display: block;
+  float: left;
+  width: 25%;
+}
+
+.result-block{
+  width: 1000px;
+  border-bottom: 2px solid white;
+  padding-bottom: 20px;
+}
+
+.rate{
+  font-size: 30px;
+  margin-left: 50px;
+}
